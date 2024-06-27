@@ -5,6 +5,7 @@ import unittest
 from src.question_a.question_a import test_config
 from src.question_a.question_a import use_global
 from src.question_b.question_b import get_random_number
+from src.question_c.question_c import get_fahrenheit
 
 class Test_Config(unittest.TestCase):
 
@@ -18,5 +19,10 @@ class Test_Config(unittest.TestCase):
     def test_get_random_number(self):
         result_num = get_random_number()
         self.assertTrue(1 <= result_num <= 5, f"Generated number {result_num} is not within range [1, 5]")
+
+    def test_get_fahrenheit(self):
+        self.assertEqual(get_fahrenheit(0), 32)
+        self.assertEqual(get_fahrenheit(5), 41)
+        self.assertEqual(get_fahrenheit(10), 50)
 
 
