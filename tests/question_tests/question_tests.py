@@ -6,6 +6,7 @@ from src.question_a.question_a import test_config
 from src.question_a.question_a import use_global
 from src.question_b.question_b import get_random_number
 from src.question_c.question_c import get_fahrenheit
+from src.question_d.question_d import is_prime
 
 class Test_Config(unittest.TestCase):
 
@@ -25,4 +26,7 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(get_fahrenheit(5), 41)
         self.assertEqual(get_fahrenheit(10), 50)
 
-
+    def test_is_prime(self):
+        self.assertEqual(is_prime(4), False)
+        self.assertEqual(is_prime(5), True)
+        self.assertEqual(is_prime(11), True)
